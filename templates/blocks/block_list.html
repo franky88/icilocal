@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block breadcrumb %}
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active">{{title|title}}</li>
+</ol>
+<hr>
+{% endblock %}
+{% block content %}
+<h3>{{title|title}}</h3>
+<hr>
+<a href="#" class="btn btn-primary btn-sm" type="button">Add block</a>
+<hr>
+<table id="myList" class="table table-hover">
+    <thead>
+        <tr>
+            <th>Blocks</th>
+            <th>Date Added</th>
+        </tr>
+    </thead>
+    <tbody>
+    	{% for list in blocklist %}
+        <tr>
+            <td><a href="{% url 'block:detail' list.id %}">{{list.block_name|title}}</a></td>
+            <td>{{list.date_add|timesince}} ago</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

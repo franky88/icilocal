@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'students.apps.StudentsConfig',
+    'instructor.apps.InstructorConfig',
+    'blocks.apps.BlocksConfig',
+    'schoolforms.apps.SchoolformsConfig',
     'crispy_forms',
 ]
 

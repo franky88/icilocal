@@ -9,6 +9,8 @@
 {% block content %}
 <h3>{{title|title}}</h3>
 <hr>
+<a href="{% url 'student:add' %}" class="btn btn-primary btn-sm" type="button">Register Student</a>
+<hr>
 <table id="myList" class="table table-hover">
     <thead>
         <tr>

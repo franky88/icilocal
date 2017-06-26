@@ -22,6 +22,9 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^student/', include("students.urls")),
+    url(r'^instructor/', include("instructor.urls")),
+    url(r'^block/', include("blocks.urls")),
+    url(r'^schoolform/', include("schoolforms.urls")),
 ]
 
 if settings.DEBUG:
