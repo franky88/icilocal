@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block breadcrumb %}
+<ol class="breadcrumb">
+  <li class="breadcrumb-item active">{{title|title}}</li>
+</ol>
+<hr>
+{% endblock %}
+{% block content %}
+<h3>{{title|title}}</h3>
+<hr>
+<table id="myList" class="table table-hover">
+    <thead>
+        <tr>
+        	<th>LRN</th>
+            <th>Full name</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Birth date</th>
+            <th>Date registered</th>
+        </tr>
+    </thead>
+    <tbody>
+    	{% for list in studentlist %}
+        <tr>
+            <td><a href="{% url 'student:detail' list.id %}">{{list.lrn}}</a></td>
+            <td>{{list.full_name|title}}</td>
+            <td>{{list.gender.gender|title}}</td>
+            <td>{{list.age}}</td>
+            <td>{{list.birth_date}}</td>
+            <td>{{list.date_registered}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
